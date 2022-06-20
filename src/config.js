@@ -78,5 +78,16 @@ export default{
             [ 'weapon', '3', 'Slingshot', 'bow', '弹弓' ],
             [ 'weapon', '3', 'Messenger', 'bow', '信使' ],
          ]
+    },
+    colors: {
+        fire: 'EE4828',
+        water: '478ECE',
+        wind: '42A4A4',
+        electric: '6A5ABF',
+        grass: '',
+        ice: '19ABCB',
+        stone: 'CF8F4B',
+        weapon: 'EF7C1C',
+        always: '757CC8'
     }
 }

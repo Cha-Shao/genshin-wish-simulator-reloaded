@@ -11,7 +11,7 @@
     text-shadow: 0 0 1px #3f4a4d;
   }
   .darkFont{
-    text-shadow: 1px 1px 0 #f0f0ee, 1px -1px 0 #f0f0ee, -1px 1px 0 #f0f0ee, -1px -1px 0 #f0f0ee;
+    text-shadow: 1px 1px 0 #EFECE9, 1px -1px 0 #EFECE9, -1px 1px 0 #EFECE9, -1px -1px 0 #EFECE9;
   }
   @font-face {
     font-family: "hk4e";
@@ -59,6 +59,7 @@
       loadCount++
     }
     image.src = asset
+    console.log('load'+asset);
   }
 
   // 分开电脑手机页面

@@ -27,12 +27,12 @@ const props = defineProps({
         border-radius: 99px;
         display: flex;
         align-items: center;
-        padding: 3px;
+        padding: 1px 3px;
         margin: 0 0.7em;
         width: fit-content;
         .icon{
-            width: 2em;
-            height: 2em;
+            width: 1.7em;
+            height: 1.7em;
             margin-left: 4px;
         }
         .data{

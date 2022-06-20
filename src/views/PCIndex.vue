@@ -17,7 +17,9 @@
       </div>
     </nav>
     <div class="banners">
-      <banner v-for="(banner, i) in config.cardPool" :key="i" :bannerCode="i"/>
+      <div class="bannerContainer" v-for="(banner, i) in config.cardPool" :key="i">
+        <banner :bannerCode="i" v-if="i == switchNum" />
+      </div>
     </div>
   </div>
 </template>
@@ -88,7 +90,7 @@ function runFunction() {
         width: 12em;
         height: 5.5em;
         background-size: 100% 100%;
-        transition: 0.2s;
+        transition: 0.1s;
         margin: 0 12px;
         &:hover{
           transform: scale(1.1);
@@ -101,12 +103,22 @@ function runFunction() {
           mask-repeat: no-repeat;
           mask-position: 0px 0px;
           transform: translateY(0px);
-          transition: 0.2s;
+          transition: 0.1s;
         }
       }
     }
     .datas{
       padding: unset;
+    }
+  }
+  .banners{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5em;
+    .bannerContainer{
+      height: 100%;
     }
   }
 }
