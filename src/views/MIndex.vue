@@ -25,38 +25,12 @@
   import config from '@/config'
   // defaultResult.star5.map((item)=>{item[0]})
   import limit from '@/limit'
-  import { ref } from 'vue'
+  import { onMounted, ref } from 'vue'
 
   import HeaderData from '@/components/HeaderData.vue';
   import Banner from '@/components/Banner.vue';
+  
 
-  // 强制横屏
-  function forceLandscape() {
-    if (window.orientation === 90 || window.orientation === -90) {
-      document.body.style.overflow = 'hidden'
-      document.body.style.height = '100%'
-      document.body.style.width = '100%'
-      document.body.style.margin = '0'
-      document.body.style.padding = '0'
-      document.body.style.background = '#000000'
-      document.body.style.position = 'fixed'
-      document.body.style.top = '0'
-      document.body.style.left = '0'
-      document.body.style.right = '0'
-      document.body.style.bottom = '0'
-      document.body.style.zIndex = '-1'
-      document.body.style.transform = 'rotate(90deg)'
-      document.body.style.webkitTransform = 'rotate(90deg)'
-      document.body.style.mozTransform = 'rotate(90deg)'
-      document.body.style.msTransform = 'rotate(90deg)'
-      document.body.style.oTransform = 'rotate(90deg)'
-      document.body.style.webkitOrient = 'landscape'
-      document.body.style.mozOrient = 'landscape'
-      document.body.style.msOrient = 'landscape'
-      document.body.style.oOrient = 'landscape'
-      document.body.style.orient = 'landscape'
-    }
-  }
 
   function setMinimumGuarantee(){
     console.log('setMinimumGuarantee');
@@ -92,19 +66,20 @@ function runFunction() {
 }
 .mPage {
   font-size: .5rem;
-  height: 100vh;
+  height: 100vw;
   overflow: hidden;
+  transform: rotate(90deg);
   .header {
     display: flex;
     align-items: center;
     flex-direction: column;
-    max-width: 15.625vw;
+    max-width: 15.625vh;
     height: 100%;
     background: url('@/assets/ui/m_header_bg.svg') no-repeat;
-    background-size: auto 100vh;
+    background-size: auto 100vw;
     background-position: center;
     position: fixed;
-    left: 2vw;
+    left: 2vh;
     .wishTitle{
       flex-direction: row;
       position: relative;
@@ -156,8 +131,8 @@ function runFunction() {
     right: 10em;
   }
   .banners{
-    margin-left: 20vw;
-    margin-top: 15vh;
+    margin-left: 20vh;
+    margin-top: 15vw;
   }
 }
 </style>
