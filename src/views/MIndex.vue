@@ -1,0 +1,163 @@
+<template>
+  <div class="mPage">
+    <nav class="header">
+      <div class="wishTitle">
+        <img src="@/assets/ui/wish.svg" alt="" class="logo">
+      </div>
+      <div class="tabs">
+        <div v-for="(cardPool, i) in config.cardPool" :key="i" class="tab" @click="switchTab(i, cardPool)"
+        :class="i==switchNum?'active':''">
+          <img :src="require('@/assets/ui/button/character/'+limit.limits[cardPool].star5[2]+'.webp')" alt="" class="character">
+        </div>
+      </div>
+    </nav>
+    <div class="datas">
+      <header-data icon="minimumGuarantee" :data="Math.ceil(Math.random()*10)" :runFunction="setMinimumGuarantee"/>
+      <header-data icon="intertwined_fated" :data="Math.ceil(Math.random()*10)" :runFunction="addIntertwinedFated"/>
+    </div>
+    <div class="banners">
+      <banner v-for="(banner, i) in config.cardPool" :key="i" :bannerCode="i"/>
+    </div>
+  </div>
+</template>
+
+<script setup>
+  import config from '@/config'
+  // defaultResult.star5.map((item)=>{item[0]})
+  import limit from '@/limit'
+  import { ref } from 'vue'
+
+  import HeaderData from '@/components/HeaderData.vue';
+  import Banner from '@/components/Banner.vue';
+
+  // 强制横屏
+  function forceLandscape() {
+    if (window.orientation === 90 || window.orientation === -90) {
+      document.body.style.overflow = 'hidden'
+      document.body.style.height = '100%'
+      document.body.style.width = '100%'
+      document.body.style.margin = '0'
+      document.body.style.padding = '0'
+      document.body.style.background = '#000000'
+      document.body.style.position = 'fixed'
+      document.body.style.top = '0'
+      document.body.style.left = '0'
+      document.body.style.right = '0'
+      document.body.style.bottom = '0'
+      document.body.style.zIndex = '-1'
+      document.body.style.transform = 'rotate(90deg)'
+      document.body.style.webkitTransform = 'rotate(90deg)'
+      document.body.style.mozTransform = 'rotate(90deg)'
+      document.body.style.msTransform = 'rotate(90deg)'
+      document.body.style.oTransform = 'rotate(90deg)'
+      document.body.style.webkitOrient = 'landscape'
+      document.body.style.mozOrient = 'landscape'
+      document.body.style.msOrient = 'landscape'
+      document.body.style.oOrient = 'landscape'
+      document.body.style.orient = 'landscape'
+    }
+  }
+
+  function setMinimumGuarantee(){
+    console.log('setMinimumGuarantee');
+  }
+
+  function addIntertwinedFated(){
+    console.log('addIntertwinedFated');
+  }
+
+  const switchNum = ref(0)
+  const switchWho = ref(config.cardPool[0])
+
+  function switchTab(i, cardPool) {
+    switchNum.value = i
+    switchWho.value = cardPool
+  }
+// defaultResult.star5.map((item)=>{item[0]})
+
+function runFunction() {
+  console.log('runFunction')
+}
+</script>
+
+<style scoped lang="scss">
+.active{
+  background: url('@/assets/ui/button/button_active.webp') no-repeat !important;
+  background-size: 100% 100% !important;
+  transform: scale(1.1);
+  .character{
+    mask-position: 0px 4px !important;
+    transform: translateY(-4px) !important;
+  }
+}
+.mPage {
+  font-size: .5rem;
+  height: 100vh;
+  overflow: hidden;
+  .header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 15.625vw;
+    height: 100%;
+    background: url('@/assets/ui/m_header_bg.svg') no-repeat;
+    background-size: auto 100vh;
+    background-position: center;
+    position: fixed;
+    left: 2vw;
+    .wishTitle{
+      flex-direction: row;
+      position: relative;
+      &::after{
+        content: "祈愿";
+        position: absolute;
+        font-size: 1em;
+        left: 7em;
+        white-space: nowrap;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #f6f2ee;
+        text-shadow: 0 0 1px #3f4a4d;
+      }
+      .logo {
+        width: 5em;
+        height: 5em;
+      }
+    }
+    .tabs{
+      padding: unset;
+      .tab{
+        background: url("@/assets/ui/button/button_unactive.webp") no-repeat;
+        width: 12em;
+        height: 5.5em;
+        background-size: 100% 100%;
+        transition: 0.2s;
+        margin: 7px 0;
+        &:hover{
+          transform: scale(1.1);
+        }
+        .character{
+          width: 100%;
+          height: 100%;
+          mask-image: url('@/assets/ui/button/button_mask.webp');
+          mask-size: 100% 100%;
+          mask-repeat: no-repeat;
+          mask-position: 0px 0px;
+          transform: translateY(0px);
+          transition: 0.2s;
+        }
+      }
+    }
+  }
+  .datas{
+    display: flex;
+    position: absolute;
+    top: 2em;
+    right: 10em;
+  }
+  .banners{
+    margin-left: 20vw;
+    margin-top: 15vh;
+  }
+}
+</style>
