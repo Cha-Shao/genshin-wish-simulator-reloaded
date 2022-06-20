@@ -1,3 +1,8 @@
+
+<!-- 手机页面的vw和vh互换
+手机页面的vw和vh互换
+手机页面的vw和vh互换 -->
+
 <template>
   <div class="mPage">
     <nav class="header">
@@ -67,19 +72,21 @@ function runFunction() {
 .mPage {
   font-size: .5rem;
   height: 100vw;
+  width: 100vh;
   overflow: hidden;
   transform: rotate(90deg);
+  transform-origin: 23% center;
   .header {
     display: flex;
     align-items: center;
     flex-direction: column;
-    max-width: 15.625vh;
+    max-width: 15.625vw;
     height: 100%;
     background: url('@/assets/ui/m_header_bg.svg') no-repeat;
     background-size: auto 100vw;
     background-position: center;
     position: fixed;
-    left: 2vh;
+    left: 3vh;
     .wishTitle{
       flex-direction: row;
       position: relative;

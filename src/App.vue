@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <router-view/>
-  </div>
+  <router-view/>
 </template>
 
 <style lang="scss">
@@ -31,13 +29,15 @@
     background-position: center;
     user-select: none !important;
     height: 100vh;
-    widows: 100vw;
+    width: 100vw;
   }
   #app {
     font-family: 'hk4e';
     color: #565656;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    height: 100%;
+    width: 100%;
   }
 </style>
 
