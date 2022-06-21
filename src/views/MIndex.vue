@@ -12,7 +12,7 @@
       <div class="tabs">
         <div v-for="(cardPool, i) in config.cardPool" :key="i" class="tab" @click="switchTab(i, cardPool)"
         :class="i==switchNum?'active':''">
-          <img :src="require('@/assets/ui/button/character/'+limit.limits[cardPool].star5[2]+'.webp')" alt="" class="character">
+          <img :src="require('@/assets/ui/button/character/'+limit[cardPool].star5[2]+'.webp')" alt="" class="character">
         </div>
       </div>
     </nav>

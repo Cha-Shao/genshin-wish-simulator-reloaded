@@ -1,16 +1,16 @@
 <template>
-    <div class="banner">
-        <div class="bannerCode lightFont" :style="'background: #'+config.colors[limit.limits[config.cardPool[bannerCode]].star5[3]]">角色活动祈愿{{bannerCode!=0?'-'+bannerCode-1:''}}</div>
-        <div class="background" :style="'background: url('+require('@/assets/ui/banner/banner_'+limit.limits[config.cardPool[bannerCode]].star5[3]+'.webp')+')'">
-            <img :src="require('@/assets/character/'+limit.limits[config.cardPool[bannerCode]].star5[2]+'.webp')" alt="" class="mainCharacter">
+    <div class="banner fadeInMedium">
+        <div class="bannerCode lightFont" :style="'background: #'+config.colors[limit[config.cardPool[bannerCode]].star5[3]]">角色活动祈愿{{bannerCode!=0?'-'+bannerCode-1:''}}</div>
+        <div class="background" :style="'background: url('+require('@/assets/ui/banner/banner_'+limit[config.cardPool[bannerCode]].star5[3]+'.webp')+')'">
+            <img :src="require('@/assets/character/'+limit[config.cardPool[bannerCode]].star5[2]+'.webp')" alt="" class="mainCharacter fadeInLarge">
             <div class="infos">
                 <div class="title">
-                    <span class="darkFont" :style="'color: #'+config.colors[limit.limits[config.cardPool[bannerCode]].star5[3]]">{{limit.limits[config.cardPool[bannerCode]].title.slice(0,2)}}</span>
-                    <span class="darkFont">{{limit.limits[config.cardPool[bannerCode]].title.slice(2)}}</span>
+                    <span class="darkFont" :style="'color: #'+config.colors[limit[config.cardPool[bannerCode]].star5[3]]">{{limit[config.cardPool[bannerCode]].title.slice(0,2)}}</span>
+                    <span class="darkFont">{{limit[config.cardPool[bannerCode]].title.slice(2)}}</span>
                 </div>
                 <div class="notes">
                     <div class="rateUp darkFont">获取概率提升！</div>
-                    <div class="mustHave lightFont" :style="'background: #'+config.colors[limit.limits[config.cardPool[bannerCode]].star5[3]]+'CC'">每十次祈愿必出四星或以上物品。</div>
+                    <div class="mustHave lightFont" :style="'background: #'+config.colors[limit[config.cardPool[bannerCode]].star5[3]]+'CC'">每十次祈愿必出四星或以上物品。</div>
                     <div class="about darkFont">活动限定五星角色仅在UP期间，通过对应祈愿获得。具体内容查看【详情】</div>
                 </div>
                 <div class="leftTime">
@@ -19,13 +19,13 @@
                 </div>
                 <div class="characterInfo">
                     <div class="part1">
-                        <img class="characterAttribute" :src="require('@/assets/ui/icon/'+limit.limits[config.cardPool[bannerCode]].star5[3]+'-color.svg')" :alt="limit.limits[config.cardPool[bannerCode]].star5[3]">
-                        <span class="characterName lightFont">{{limit.limits[config.cardPool[bannerCode]].star5[4]}}</span>
+                        <img class="characterAttribute" :src="require('@/assets/ui/icon/'+limit[config.cardPool[bannerCode]].star5[3]+'-color.svg')" :alt="limit[config.cardPool[bannerCode]].star5[3]">
+                        <span class="characterName lightFont">{{limit[config.cardPool[bannerCode]].star5[4]}}</span>
                     </div>
                     <div class="stars">
                         <img v-for="i in 5" :key="i" src="@/assets/ui/icon/rarity.svg" alt="⭐" class="star">
                     </div>
-                    <div class="slogan sloganFont">{{limit.limits[config.cardPool[bannerCode]].slogan}}</div>
+                    <div class="slogan sloganFont">{{limit[config.cardPool[bannerCode]].slogan}}</div>
                 </div>
             </div>
         </div>
@@ -121,6 +121,7 @@
                             font-size: 4em;
                             position: relative;
                             white-space: nowrap;
+                            text-shadow: 1px 1px 0 #454443, 1px -1px 0 #454443, -1px 1px 0 #454443, -1px -1px 0 #454443;
                             &::after{
                                 content: 'UP！';
                                 font-size: 0.4em;
@@ -158,4 +159,39 @@
             }
         }
     }
+
+// css动画
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInMedium{
+    0% {
+        transform: translateX(25px)
+    }
+
+    to {
+        transform: translateX(0)
+    }
+}
+.fadeInMedium{
+    animation: fadeInMedium 0.5s ease-out, fadeIn 0.5s ease-out;
+}
+@keyframes fadeInLarge{
+    0% {
+        transform: translateX(50px)
+    }
+
+    to {
+        transform: translateX(0)
+    }
+}
+.fadeInLarge{
+    animation: fadeInLarge 0.5s ease-out, fadeIn 0.5s ease-out;
+}
 </style>
