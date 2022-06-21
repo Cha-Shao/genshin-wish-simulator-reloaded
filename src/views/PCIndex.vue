@@ -1,5 +1,8 @@
 <template>
   <div class="pcPage">
+    <img src="@/assets/ui/button/arrow.svg" alt=">" height="50" class="arrow prev" @click="switchItem(-1)">
+    <img src="@/assets/ui/button/arrow.svg" alt=">" height="50" class="arrow next"
+    @click="switchItem(1)">
     <nav class="header">
       <div class="wishTitle header">
         <img src="@/assets/ui/wish.svg" alt="" class="logo">
@@ -47,11 +50,16 @@
     switchNum.value = i
     switchWho.value = cardPool
   }
-// defaultResult.star5.map((item)=>{item[0]})
 
-function runFunction() {
-  console.log('runFunction')
-}
+  function switchItem(switchCode){
+    switchNum.value += switchCode
+    if(switchNum.value < 0){
+      switchNum.value = config.cardPool.length - 1
+    } else if(switchNum.value >= config.cardPool.length){
+      switchNum.value = 0
+    }
+  }
+// defaultResult.star5.map((item)=>{item[0]})
 </script>
 
 <style scoped lang="scss">
@@ -64,6 +72,26 @@ function runFunction() {
     transform: translateY(-7px) !important;
   }
 }
+
+.arrow{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.1s;
+  z-index: 99;
+  transform-origin: center 25%;
+  &:active{
+    opacity: 0.2;
+  }
+}
+.prev{
+  transform: rotate(180deg);
+  left: 3em;
+}
+.next{
+  right: 3em;
+}
+
 .pcPage {
   font-size: 1rem;
   height: 100vh;
@@ -87,11 +115,11 @@ function runFunction() {
       padding: unset;
       .tab{
         background: url("@/assets/ui/button/button_unactive.webp") no-repeat;
-        width: 12em;
-        height: 5.5em;
+        width: 11em;
+        height: 5em;
         background-size: 100% 100%;
         transition: 0.1s;
-        margin: 0 12px;
+        margin: 0 1.1em;
         &:hover{
           transform: scale(1.1);
         }

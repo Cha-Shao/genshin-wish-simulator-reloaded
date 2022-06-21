@@ -13,6 +13,9 @@
   .darkFont{
     text-shadow: 1px 1px 0 #EFECE9, 1px -1px 0 #EFECE9, -1px 1px 0 #EFECE9, -1px -1px 0 #EFECE9;
   }
+  .sloganFont{
+    color: #D3BC8E;
+  }
   @font-face {
     font-family: "hk4e";
     src: url('./assets/hk4e_zh-cn.ttf');

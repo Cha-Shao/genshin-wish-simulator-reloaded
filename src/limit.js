@@ -1,9 +1,9 @@
 export default{
     limits: {
         gentryOfHermitage2: {
-            title: '陵薮市朝', 
-            slogan: '尘世闲游', 
-            star5: [ 'character', '5', 'Zhongli', 'stone', '钟离'], 
+            title: '烟火之邀', 
+            slogan: '护法夜叉', 
+            star5: [ 'character', '5', 'Xiao', 'wind', '魈'], 
             star4: [['character', '4', 'Yanfei', 'fire', '烟绯'], ['character', '4', 'Noelle', 'stone', '诺艾尔'], ['character', '4', 'Diona', 'ice', '迪奥娜']]
         }, 
         theHeronsCourt: {
