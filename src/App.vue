@@ -51,10 +51,11 @@
   
   let loadCount = 0
   let assets = [
-    require('@/assets/ui/button/button_active.webp'),
-    require('@/assets/ui/button/button_unactive.webp'),
-    require('@/assets/ui/button/button_mask.webp'),
-    require('@/assets/ui/button/wish_button.webp'),
+    require('@/assets/video/5starwish-single-export.mp4'),
+    require('@/assets/video/5starwish-export.mp4'),
+    require('@/assets/video/4starwish-single-export.mp4'),
+    require('@/assets/video/4starwish-export.mp4'),
+    require('@/assets/video/3starwish-single-export.mp4'),
   ]
   for (let asset of assets){
     let image = new Image()
@@ -62,11 +63,12 @@
       loadCount++
     }
     image.src = asset
+    console.log(asset);
   }
 
   // 分开电脑手机页面
   onMounted(()=>{
-    if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
       // 如果是移动端，则跳转到移动端页面
       router.push({name: 'm_index',})
     }

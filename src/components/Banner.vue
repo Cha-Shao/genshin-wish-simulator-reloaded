@@ -2,7 +2,8 @@
     <div class="banner fadeInMedium">
         <div class="bannerCode lightFont" :style="'background: #'+config.colors[limit[config.cardPool[bannerCode]].star5[3]]">角色活动祈愿{{bannerCode!=0?'-'+bannerCode-1:''}}</div>
         <div class="background" :style="'background: url('+require('@/assets/ui/banner/banner_'+limit[config.cardPool[bannerCode]].star5[3]+'.webp')+')'">
-            <img :src="require('@/assets/character/'+limit[config.cardPool[bannerCode]].star5[2]+'.webp')" alt="" class="mainCharacter fadeInLarge">
+            <img :src="require('@/assets/character/'+limit[config.cardPool[bannerCode]].star5[2]+'.webp')" alt="" class="mainCharacter fadeInLarge"
+            :style="position.banner[limit[config.cardPool[bannerCode]].star5[2]] == null?'top: -15%;left: -30%;width: 160%;':'top: '+position.banner[limit[config.cardPool[bannerCode]].star5[2]][0]+'em;left: '+position.banner[limit[config.cardPool[bannerCode]].star5[2]][1]+'em;width: '+position.banner[limit[config.cardPool[bannerCode]].star5[2]][2]+'%'">
             <div class="subCharacters">
                 <img :src="require('@/assets/character/withoutBackground/'+limit[config.cardPool[bannerCode]].star4[0][2]+'.webp')" alt="" class="character1 subCharacter">
                 <img :src="require('@/assets/character/withoutBackground/'+limit[config.cardPool[bannerCode]].star4[1][2]+'.webp')" alt="" class="character2 subCharacter">
@@ -40,6 +41,7 @@
 <script setup>
     import config from '@/config'
     import limit from '@/limit'
+    import position from '@/position';
 
     const props = defineProps({
         bannerCode: Number
@@ -72,9 +74,6 @@
             position: relative;
             .mainCharacter{
                 position: absolute;
-                left: -30%;
-                top: -15%;
-                width: 160%;
                 z-index: 0;
             }
             .subCharacters{
