@@ -3,7 +3,7 @@
         <div class="bannerCode lightFont" :style="'background: #'+config.colors[limit[config.cardPool[bannerCode]].star5[3]]">角色活动祈愿{{bannerCode!=0?'-'+bannerCode-1:''}}</div>
         <div class="background" :style="'background: url('+require('@/assets/ui/banner/banner_'+limit[config.cardPool[bannerCode]].star5[3]+'.webp')+')'">
             <img :src="require('@/assets/character/'+limit[config.cardPool[bannerCode]].star5[2]+'.webp')" alt="" class="mainCharacter fadeInLarge">
-            <div class="infos">
+            <div class="infos fadeInMedium">
                 <div class="title">
                     <span class="darkFont" :style="'color: #'+config.colors[limit[config.cardPool[bannerCode]].star5[3]]">{{limit[config.cardPool[bannerCode]].title.slice(0,2)}}</span>
                     <span class="darkFont">{{limit[config.cardPool[bannerCode]].title.slice(2)}}</span>
@@ -95,6 +95,15 @@
                         margin-top: 0.3em;
                         font-size: 1.5em;
                         max-width: 19em;
+                    }
+                    &::after{
+                        content: '';
+                        height: 50%;
+                        width: 0.4em;
+                        background: #565656;
+                        position: absolute;
+                        left: -2.7em;
+                        top: 50%;
                     }
                 }
                 .leftTime{

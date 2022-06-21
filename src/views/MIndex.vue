@@ -25,6 +25,13 @@
         <banner :bannerCode="i" v-if="i == switchNum" />
       </div>
     </div>
+    <div class="buttons">
+      <div style="display: flex">
+        <sub-button :runFunction="setMinimumGuarantee">切换手机端</sub-button>
+        <sub-button :runFunction="setMinimumGuarantee">访问作者</sub-button>
+        <sub-button :runFunction="setMinimumGuarantee">必看！</sub-button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -36,6 +43,7 @@
 
   import HeaderData from '@/components/HeaderData.vue';
   import Banner from '@/components/Banner.vue';
+  import SubButton from '@/components/SubButton.vue';
   
 
 
@@ -145,6 +153,16 @@ function runFunction() {
       .bannerContainer{
         font-size: 0.9em;
       }
+    }
+    .buttons{
+      padding: 0 4em;
+      box-sizing: border-box;
+      position: absolute;
+      bottom: 3em;
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
     }
   }
 </style>
