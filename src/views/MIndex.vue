@@ -89,8 +89,10 @@ function runFunction() {
     height: 100vw;
     width: 100vh;
     overflow: hidden;
-    transform: rotate(90deg);
-    transform-origin: 23% center;
+    position: relative;
+    transform: rotate(90deg) translateY(-50%);
+    right: -50%;
+    transform-origin: 0% 0%;
     padding: 5vh 24vw 5vh 42vw;
     box-sizing: border-box;
     .header {
