@@ -67,8 +67,8 @@ function runFunction() {
     background-size: 100% 100% !important;
     transform: scale(1.1);
     .character{
-      mask-position: 0px 4px !important;
-      transform: translateY(-4px) !important;
+      mask-position: 0px 0px !important;
+      transform: translateY(-0px) !important;
     }
   }
   .mPage {
@@ -126,8 +126,8 @@ function runFunction() {
             mask-image: url('@/assets/ui/button/button_mask.webp');
             mask-size: 100% 100%;
             mask-repeat: no-repeat;
-            mask-position: 0px 0px;
-            transform: translateY(0px);
+            mask-position: 0px -4px;
+            transform: translateY(4px);
             transition: 0.1s;
           }
         }

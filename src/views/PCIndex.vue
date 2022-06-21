@@ -68,8 +68,8 @@
   background-size: 100% 100% !important;
   transform: scale(1.1);
   .character{
-    mask-position: 0px 7px !important;
-    transform: translateY(-7px) !important;
+    mask-position: 0px 0px !important;
+    transform: translateY(0px) !important;
   }
 }
 
@@ -127,10 +127,10 @@
           width: 100%;
           height: 100%;
           mask-image: url('@/assets/ui/button/button_mask.webp');
-          mask-size: 100% 100%;
+          mask-size: cover;
           mask-repeat: no-repeat;
-          mask-position: 0px 0px;
-          transform: translateY(0px);
+          mask-position: 0px -7px;
+          transform: translateY(7px);
           transition: 0.1s;
         }
       }

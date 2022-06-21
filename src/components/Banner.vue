@@ -9,9 +9,9 @@
                     <span class="darkFont">{{limit.limits[config.cardPool[bannerCode]].title.slice(2)}}</span>
                 </div>
                 <div class="notes">
-                    <div class="rateUp">获取概率提升！</div>
+                    <div class="rateUp darkFont">获取概率提升！</div>
                     <div class="mustHave lightFont" :style="'background: #'+config.colors[limit.limits[config.cardPool[bannerCode]].star5[3]]+'CC'">每十次祈愿必出四星或以上物品。</div>
-                    <div class="about">活动限定五星角色仅在UP期间，通过对应祈愿获得。具体内容查看【详情】</div>
+                    <div class="about darkFont">活动限定五星角色仅在UP期间，通过对应祈愿获得。具体内容查看【详情】</div>
                 </div>
                 <div class="leftTime">
                     <div>剩余时间</div>
