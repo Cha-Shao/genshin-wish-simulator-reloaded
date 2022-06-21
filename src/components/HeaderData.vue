@@ -27,7 +27,7 @@ const props = defineProps({
         border-radius: 99px;
         display: flex;
         align-items: center;
-        padding: 1px 3px;
+        padding: 2px 3px;
         margin: 0 0.7em;
         width: fit-content;
         .icon{
@@ -43,8 +43,8 @@ const props = defineProps({
             background: #EDE5D8;
             padding: 3px;
             border-radius: 99px;
-            width: 1em;
-            height: 1em;
+            width: 1.2em;
+            height: 1.2em;
         }
     }
 </style>

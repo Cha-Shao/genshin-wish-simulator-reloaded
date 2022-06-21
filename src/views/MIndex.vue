@@ -27,9 +27,13 @@
     </div>
     <div class="buttons">
       <div style="display: flex">
-        <sub-button :runFunction="setMinimumGuarantee">切换手机端</sub-button>
+        <sub-button :runFunction="setMinimumGuarantee">投喂</sub-button>
         <sub-button :runFunction="setMinimumGuarantee">访问作者</sub-button>
         <sub-button :runFunction="setMinimumGuarantee">必看！</sub-button>
+      </div>
+      <div style="display: flex" class="mainButton">
+        <main-button :runFunction="setMinimumGuarantee">祈愿1次</main-button>
+        <main-button :runFunction="setMinimumGuarantee">祈愿10次</main-button>
       </div>
     </div>
   </div>
@@ -44,6 +48,7 @@
   import HeaderData from '@/components/HeaderData.vue';
   import Banner from '@/components/Banner.vue';
   import SubButton from '@/components/SubButton.vue';
+  import MainButton from '@/components/MainButton.vue';
   
 
 
@@ -159,6 +164,8 @@ function runFunction() {
       box-sizing: border-box;
       position: absolute;
       bottom: 3em;
+      left: 50%;
+      transform: translateX(-50%);
       width: 100%;
       display: flex;
       align-items: flex-end;

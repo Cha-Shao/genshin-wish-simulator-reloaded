@@ -62,7 +62,6 @@
       loadCount++
     }
     image.src = asset
-    console.log('load'+asset);
   }
 
   // 分开电脑手机页面

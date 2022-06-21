@@ -3,6 +3,11 @@
         <div class="bannerCode lightFont" :style="'background: #'+config.colors[limit[config.cardPool[bannerCode]].star5[3]]">角色活动祈愿{{bannerCode!=0?'-'+bannerCode-1:''}}</div>
         <div class="background" :style="'background: url('+require('@/assets/ui/banner/banner_'+limit[config.cardPool[bannerCode]].star5[3]+'.webp')+')'">
             <img :src="require('@/assets/character/'+limit[config.cardPool[bannerCode]].star5[2]+'.webp')" alt="" class="mainCharacter fadeInLarge">
+            <div class="subCharacters">
+                <img :src="require('@/assets/character/withoutBackground/'+limit[config.cardPool[bannerCode]].star4[0][2]+'.webp')" alt="" class="character1 subCharacter">
+                <img :src="require('@/assets/character/withoutBackground/'+limit[config.cardPool[bannerCode]].star4[1][2]+'.webp')" alt="" class="character2 subCharacter">
+                <img :src="require('@/assets/character/withoutBackground/'+limit[config.cardPool[bannerCode]].star4[2][2]+'.webp')" alt="" class="character3 subCharacter">
+            </div>
             <div class="infos fadeInMedium">
                 <div class="title">
                     <span class="darkFont" :style="'color: #'+config.colors[limit[config.cardPool[bannerCode]].star5[3]]">{{limit[config.cardPool[bannerCode]].title.slice(0,2)}}</span>
@@ -71,6 +76,26 @@
                 top: -15%;
                 width: 160%;
                 z-index: 0;
+            }
+            .subCharacters{
+                position: absolute;
+                left: 34%;
+                top: 0;
+                width: 95%;
+                .subCharacter{
+                    width: 103%;
+                    position: relative;
+                }
+                .character2{
+                    position: absolute;
+                    top: 12em;
+                    left: 5em;
+                }
+                .character3{
+                    position: absolute;
+                    top: 14em;
+                    left: -5em;
+                }
             }
             .infos{
                 z-index: 99;

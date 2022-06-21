@@ -3,7 +3,7 @@ export default{
         title: '烟火之邀', 
         slogan: '护法夜叉', 
         star5: [ 'character', '5', 'Xiao', 'wind', '魈'], 
-        star4: [['character', '4', 'Yanfei', 'fire', '烟绯'], ['character', '4', 'Noelle', 'stone', '诺艾尔'], ['character', '4', 'Diona', 'ice', '迪奥娜']]
+        star4: [['character', '4', 'Yanfei', 'fire', '烟绯'], ['character', '4', 'Noelle', 'stone', '诺艾尔'], ['character', '4', 'Barbara', 'water', '芭芭拉']]
     }, 
     theHeronsCourt: {
         title: '白鹭之庭', 
