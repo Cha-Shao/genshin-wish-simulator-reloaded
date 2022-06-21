@@ -21,8 +21,6 @@
     src: url('./assets/hk4e_zh-cn.ttf');
   }
 
-
-
   body{
     cursor: url('./assets/ui/cursor.webp'), pointer;
     margin: 0;

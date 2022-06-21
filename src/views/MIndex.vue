@@ -5,14 +5,12 @@
 
 <template>
 
-  <toast title="必读！" class="mobile" rotate>
+  <toast title="必读！" class="mobile" rotate v-if="readmeView">
     <p>祈愿模拟器处于早期开发阶段</p>
     <p>若发现问题请按下F12截图控制台</p>
     <p>并联系作者邮箱：</p>
     <p>yrchashao@foxmail.com</p>
-    <br>
-    <p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
-    <sub-button dark :runFunction="runFunction">知道啦</sub-button>
+    <sub-button dark :runFunction="switchReadme">知道啦</sub-button>
   </toast>
 
   <div class="mPage rotate">
@@ -41,7 +39,7 @@
       <div style="display: flex">
         <sub-button :runFunction="setMinimumGuarantee">投喂</sub-button>
         <sub-button :runFunction="setMinimumGuarantee">访问作者</sub-button>
-        <sub-button :runFunction="setMinimumGuarantee">必看！</sub-button>
+        <sub-button :runFunction="switchReadme">必看！</sub-button>
       </div>
       <div style="display: flex" class="mainButton">
         <main-button :runFunction="setMinimumGuarantee">祈愿1次</main-button>
@@ -81,9 +79,15 @@
   }
 // defaultResult.star5.map((item)=>{item[0]})
 
-function runFunction() {
-  console.log('runFunction')
-}
+  function runFunction() {
+    console.log('runFunction')
+  }
+
+
+  const readmeView = ref(true)
+  function switchReadme(){
+    readmeView.value = !readmeView.value
+  }
 </script>
 
 <style scoped lang="scss">

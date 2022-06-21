@@ -16,5 +16,11 @@ export default{
         slogan: '琉焰华舞',
         star5: ['character', '5', 'Yoimiya', 'fire', '宵宫'],
         star4: [['character', '4', 'Xinyan', 'fire', '辛焱'], ['character', '4', 'Sayu', 'wind', '早柚'], ['character', '4', 'Diona', 'ice', '迪奥娜']]
+    },
+    wanyee: {
+        title: '万叶测试',
+        slogan: '卡池测试',
+        star5: ['character', '5', 'Kazuha', 'wind', '万叶'],
+        star4: [['character', '4', 'Xinyan', 'fire', '辛焱'], ['character', '4', 'Sayu', 'wind', '早柚'], ['character', '4', 'Diona', 'ice', '迪奥娜']]
     }
 }

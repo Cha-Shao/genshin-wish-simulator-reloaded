@@ -1,6 +1,6 @@
 export default{
     
-    cardPool: [ 'gentryOfHermitage2','theHeronsCourt','tapestryOfGoldenFlames' ],
+    cardPool: [ 'gentryOfHermitage2','theHeronsCourt','tapestryOfGoldenFlames', 'wanyee'],
 
     defaultResult: {
         star5: [ 
