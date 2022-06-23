@@ -18,8 +18,11 @@ const props = defineProps({
         font-size: 1.5em;
         width: 14.6em;
         height: 3.4em;
-        text-align: center;
         transition: 0.1s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         &:active{
             filter: brightness(0.95);
         }

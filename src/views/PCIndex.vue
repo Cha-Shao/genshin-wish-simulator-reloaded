@@ -40,8 +40,14 @@
         <sub-button :runFunction="switchReadme">必看！</sub-button>
       </div>
       <div style="display: flex">
-        <main-button :runFunction="setMinimumGuarantee">祈愿1次</main-button>
-        <main-button :runFunction="setMinimumGuarantee">祈愿10次</main-button>
+        <main-button :runFunction="setMinimumGuarantee">
+          <div>祈愿1次</div>
+          <div><img src="@/assets/ui/icon/intertwined_fated.webp" height="30"/>x1</div>
+        </main-button>
+        <main-button :runFunction="setMinimumGuarantee">
+          <div>祈愿10次</div>
+          <div><img src="@/assets/ui/icon/intertwined_fated.webp" height="30"/>x10</div>
+        </main-button>
       </div>
     </div>
   </div>
